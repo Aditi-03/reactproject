@@ -1,0 +1,41 @@
+.header{
+    display:flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.navItems{
+    display: flex;
+    padding-right: 40px;
+    align-items: center;
+}
+
+img{
+    height: 120px;
+    width:120px;
+}
+
+.resCard{
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #f0f0f0;
+}
+.resCard:hover{
+cursor: pointer;
+}
+
+.search{
+    padding: 20px;
+}
+
+.resLogo{
+    width:100%;
+    
+}
+
+.restaurantContainer{
+    display: flex;
+    flex-wrap: wrap ;
+}
