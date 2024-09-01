@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 const resList = [
     {
-        "resName": "KFC",
+        "resName": "KFC Fast Food",
         "cuisine": "Fast Food",
         "rating": 4.2,
         "eta": "15 mins",
