@@ -39,3 +39,7 @@ cursor: pointer;
     display: flex;
     flex-wrap: wrap ;
 }
+
+.filter_btn{
+    margin:10px;
+}
