@@ -42,4 +42,23 @@ cursor: pointer;
 
 .filter_btn{
     margin:10px;
+    cursor: pointer;
+}
+.login_btn{
+    margin: 10px;
+    padding: 10px;
+}
+.list
+{
+    display:flex;
+
+}
+.filter{
+    display: flex;
+    
+}
+
+.shimmer_container
+{
+    display: flex;
 }
