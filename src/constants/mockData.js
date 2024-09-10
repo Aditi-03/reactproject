@@ -27,7 +27,7 @@ const resList = [
         "eta": "10 mins",
         "image": "https://b.zmtcdn.com/data/pictures/chains/5/90195/93776f3249312397e2c2ba274b4812ec.jpg?fit=around|960:500&crop=960:500;*,*"
     },
-    {   "Id": 5,
+    {   "Id": 1,
         "resName": "Taco Bell",
         "cuisine": "Mexican",
         "rating": 4.1,

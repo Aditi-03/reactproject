@@ -4,6 +4,8 @@ import RestrauntCard from "./RestrauntCard";
 // import DummyCard from "./DummyCard";
 import resList from "../constants/mockData";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+
 
 const Body= ()=>{
    const [list, setlist] = useState(resList);
@@ -12,7 +14,7 @@ const Body= ()=>{
    const [filterRestraunt, setFilteredRestraunt] = useState(resList);
 
    useEffect(() => {
-    setFilteredRestraunt(resList);
+  
     fetchData();
    }, []);
    
@@ -44,9 +46,9 @@ const Body= ()=>{
 
                 let filteredlist= resList;
 
-                // console.log(filteredlist,'a');
+               
                 filteredlist= resList.filter((res)=> res.resName.toLowerCase().includes(searchText.toLowerCase()))
-                console.log(filteredlist,'b');
+               
                 setFilteredRestraunt(filteredlist);
                 }
                 
