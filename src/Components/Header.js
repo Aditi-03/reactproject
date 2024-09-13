@@ -1,16 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header= ()=>{
 const [content, setContent] = useState("Login");
+const onlineStatus= useOnlineStatus();
     return (
 
 <div className="header">
 <div className="logoContainer">
-      <img src="https://www.shutterstock.com/image-vector/vector-food-delivery-icons-logo-260nw-552182422.jpg" alt="logo"/>
-       </div>
+<img src="https://www.shutterstock.com/image-vector/vector-food-delivery-icons-logo-260nw-552182422.jpg" alt="logo"/>
+</div>
        <div className="navItems">
+   
+    <div className={onlineStatus === true ? "online" : "offline"}>  </div>
+
        <ul className="list">
           
+          <li className="login_btn"><Link to="/grocery">Grocery</Link></li>
           <li className="login_btn"><Link to="/">Home</Link></li>
           <li className="login_btn"><Link to="/about">About Us</Link></li>
           <li className="login_btn">Contact Us</li>

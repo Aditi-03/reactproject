@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 import RestrauntCard from "./RestrauntCard";
 // import DummyCard from "./DummyCard";
-import resList from "../constants/mockData";
+import resList from "../utils/constants/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Body= ()=>{
@@ -31,6 +32,10 @@ const Body= ()=>{
         });
 
    }
+
+   const onlineStatus= useOnlineStatus();
+   if(onlineStatus===false) return <h1> Looks like you are offline!!</h1>
+
   
    if (dummyData.length === 0) {
     return <Shimmer/>; 
