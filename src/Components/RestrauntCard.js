@@ -12,4 +12,12 @@ return (
     </div>
 );
 };
+export const withpromotedLabel =(RestrauntCard)=>{
+    return (props)=>{
+        return <div>
+            <label className="label">Promoted</label>
+            <RestrauntCard {...props}/>
+        </div>
+    }
+}
 export default RestrauntCard;

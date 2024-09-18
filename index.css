@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .header{
     display:flex;
     justify-content: space-between;
@@ -21,6 +26,7 @@ img{
     border: 1px solid black;
     padding: 5px;
     background-color: #f0f0f0;
+    margin: 10px;
 }
 .resCard:hover{
 cursor: pointer;
@@ -80,4 +86,12 @@ cursor: pointer;
     height: 20px;
     border-radius: 50%;
     background-color: red;
+}
+.label{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 4px;
+    background-color: black;
+    color: #f0f0f0;
 }

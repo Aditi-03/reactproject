@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
-import RestrauntCard from "./RestrauntCard";
+import RestrauntCard,{withpromotedLabel} from "./RestrauntCard";
 // import DummyCard from "./DummyCard";
 import resList from "../utils/constants/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import userContext from "../utils/userContext";
 
 
 const Body= ()=>{
@@ -13,6 +14,10 @@ const Body= ()=>{
    const [dummyData,setdummyData] = useState([]);
    const [searchText, setSearchText] = useState("");
    const [filterRestraunt, setFilteredRestraunt] = useState(resList);
+
+   const PromotedRestaurant = withpromotedLabel(RestrauntCard);
+   const {loggedInUser}= useContext(userContext);
+   console.log(loggedInUser,"Userjjn")
 
    useEffect(() => {
   
@@ -46,6 +51,7 @@ const Body= ()=>{
             <div className="filter"> 
             <div className="search">
                 <input type="text" className="search_box" value={searchText} onChange={(e)=> setSearchText(e.target.value)}/>
+                <p>{loggedInUser}</p>
                 <button onClick={()=> 
                 {console.log(searchText)
 
@@ -56,11 +62,6 @@ const Body= ()=>{
                
                 setFilteredRestraunt(filteredlist);
                 }
-                
-
-               
-                
-                
                 }> Search</button>
                 
             </div>
@@ -74,6 +75,7 @@ const Body= ()=>{
             <div className="restaurantContainer">
                 {
                     filterRestraunt.map((restaurant)=>(
+                        restaurant.promoted?<PromotedRestaurant  resData={restaurant}/>:
                     <RestrauntCard key={restaurant.Id}  resData={restaurant}/>))
                 }
     
