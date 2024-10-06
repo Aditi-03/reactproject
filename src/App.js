@@ -9,6 +9,7 @@ import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import userContext from "./utils/userContext";
 // import Grocery from "./Components/Grocery";
+import { Provider } from 'react-redux'
 
 const Grocery= lazy(()=> import("./Components/Grocery"));
 
@@ -16,6 +17,7 @@ const AppLayout= ()=>{
 
     const [userName,setUserName]= useState("A");
     return (
+        <Provider>
         <userContext.Provider value={{loggedInUser: userName}}>
             <div className="app">
             <Header/>
@@ -24,6 +26,7 @@ const AppLayout= ()=>{
             </div>
 
         </userContext.Provider>
+        </Provider>
        
     )
 }

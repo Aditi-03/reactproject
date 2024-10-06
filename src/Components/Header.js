@@ -2,12 +2,15 @@ import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import userContext from "../utils/userContext";
+import {useSelector} from "react-redux"
 
 
 const Header= ()=>{
 const [content, setContent] = useState("Login");
 const onlineStatus= useOnlineStatus();
 const { loggedInUser}= useContext(userContext);
+
+const cartItems= useSelector((store)=> store.cart.items);
 
    return (
 
@@ -25,7 +28,7 @@ const { loggedInUser}= useContext(userContext);
           <li className="login_btn"><Link to="/">Home</Link></li>
           <li className="login_btn"><Link to="/about">About Us</Link></li>
           <li className="login_btn">Contact Us</li>
-          <li className="login_btn">Cart</li>
+          <li className="login_btn">Cart- {cartItems.length}</li>
           <li className="login_btn font-bold">{loggedInUser}</li>
         </ul>
         <button 
